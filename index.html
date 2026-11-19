@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Social Media Mockups</title>
-  <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cstyle%3Epath%7Bfill:%2309090b;%7D@media(prefers-color-scheme:dark)%7Bpath%7Bfill:%23ffffff;%7D%7D%3C/style%3E%3Cpath d='M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z'/%3E%3C/svg%3E" />
+  <link id="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cstyle%3E.f%7Bfill:%2309090b%3Bstroke:%2309090b%3B%7D@media(prefers-color-scheme:dark)%7B.f%7Bfill:%23ffffff%3Bstroke:%23ffffff%3B%7D%7D%3C/style%3E%3Crect class='f' x='32' y='32' width='192' height='192' rx='24' fill='none' stroke-width='16'/%3E%3Ccircle class='f' cx='128' cy='104' r='32'/%3E%3Cpath class='f' d='M64 200a64 64 0 0 1 128 0v8H64Z'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -310,7 +310,7 @@
       const favicon = document.getElementById('favicon');
       if (!favicon) return;
       const fill = app.dark ? '%23ffffff' : '%2309090b';
-      favicon.href = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='${fill}' d='M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z'/%3E%3C/svg%3E`;
+      favicon.href = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect x='32' y='32' width='192' height='192' rx='24' fill='none' stroke='${fill}' stroke-width='16'/%3E%3Ccircle cx='128' cy='104' r='32' fill='${fill}'/%3E%3Cpath fill='${fill}' d='M64 200a64 64 0 0 1 128 0v8H64Z'/%3E%3C/svg%3E`;
     }
 
     function escapeHtml(str) {

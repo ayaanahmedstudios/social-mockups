@@ -24,7 +24,7 @@
             tiktok: ['"TikTok Sans"', '-apple-system', 'sans-serif'],
             reddit: ['"Reddit Sans"', '-apple-system', 'sans-serif'],
             youtube: ['Roboto', 'Arial', 'sans-serif'],
-            discord: ['"Noto Sans"', '-apple-system', 'sans-serif'],
+            discord: ['"ABC Ginto Normal"', '"Noto Sans"', '-apple-system', 'sans-serif'],
             jakarta: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif']
           }
         }
@@ -33,6 +33,30 @@
   </script>
 
   <style>
+    @font-face {
+      font-family: 'ABC Ginto Normal';
+      src: url('./fonts/ABCGintoNormal-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ABC Ginto Normal';
+      src: url('./fonts/ABCGintoNormal-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'ABC Ginto Normal';
+      src: url('./fonts/ABCGintoNormal-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -1027,20 +1051,20 @@
         case 'dc-message':
         case 'dc-embed':
           return `
-            <div class="w-[580px] max-w-full font-discord rounded-3xl p-5 sm:p-6 border shadow-sm" style="background:${c.bg};color:${c.text};border-color:${c.border}">
+            <div class="w-[580px] max-w-full font-discord font-normal rounded-3xl p-5 sm:p-6 border shadow-sm" style="background:${c.bg};color:${c.text};border-color:${c.border}">
               <div class="flex gap-4">
                 ${avatarBox('avatar', 'w-11 h-11')}
                 <div class="flex-1">
                   <div class="flex items-center gap-2">
-                    <span class="font-semibold text-base text-[#38bdf8]" ${edAttr('name')}>${escapeHtml(d.name)}</span>
+                    <span class="font-bold text-base text-[#38bdf8]" ${edAttr('name')}>${escapeHtml(d.name)}</span>
                     <span data-toggle="verified" class="px-1.5 py-0.5 rounded bg-[#5865f2] text-white text-[10px] font-bold cursor-pointer ${!d.verified ? 'unverified-toggle opacity-35' : ''}">APP</span>
-                    <span class="text-xs" style="color:${c.muted}" ${edAttr('time')}>${escapeHtml(d.time)}</span>
+                    <span class="text-xs font-medium" style="color:${c.muted}" ${edAttr('time')}>${escapeHtml(d.time)}</span>
                   </div>
-                  <div class="text-[16px] leading-relaxed mt-1.5" ${edAttr('text')}>${escapeHtml(d.text)}</div>
+                  <div class="text-[16px] font-normal leading-relaxed mt-1.5" ${edAttr('text')}>${escapeHtml(d.text)}</div>
                   ${id === 'dc-embed' ? `
                     <div class="mt-3 rounded-xl p-4 border-l-4 border-[#5865f2]" style="background:${c.soft}">
                       <div class="font-bold text-sm mb-1" ${edAttr('title')}>${escapeHtml(d.title)}</div>
-                      <div class="text-sm leading-snug mb-3" style="color:${c.muted}" ${edAttr('quoteText')}>${escapeHtml(d.quoteText)}</div>
+                      <div class="text-sm font-normal leading-snug mb-3" style="color:${c.muted}" ${edAttr('quoteText')}>${escapeHtml(d.quoteText)}</div>
                       <div class="rounded-lg overflow-hidden">${mediaBox('media', 'aspect-video', 'Tap to upload embed image')}</div>
                     </div>
                   ` : `
@@ -1060,7 +1084,7 @@
 
         case 'dc-profile':
           return `
-            <div class="w-[420px] max-w-full font-discord rounded-3xl overflow-hidden border shadow-sm" style="background:${c.bg};color:${c.text};border-color:${c.border}">
+            <div class="w-[420px] max-w-full font-discord font-normal rounded-3xl overflow-hidden border shadow-sm" style="background:${c.bg};color:${c.text};border-color:${c.border}">
               ${mediaBox('banner', 'h-28', 'Tap to upload banner')}
               <div class="px-5 pb-5">
                 <div class="rounded-full p-1.5 inline-block -mt-10 mb-2.5 relative z-10" style="background:${c.bg}">
@@ -1068,8 +1092,8 @@
                 </div>
                 <div class="rounded-2xl p-4" style="background:${c.soft}">
                   <div class="font-bold text-lg flex items-center gap-1.5"><span ${edAttr('name')}>${escapeHtml(d.name)}</span></div>
-                  <div class="text-sm" style="color:${c.muted}" ${edAttr('handle')}>${escapeHtml(d.handle)}</div>
-                  <div class="text-sm mt-3 pt-3 border-t leading-relaxed" style="border-color:${c.border}" ${edAttr('bio')}>${escapeHtml(d.bio)}</div>
+                  <div class="text-sm font-medium" style="color:${c.muted}" ${edAttr('handle')}>${escapeHtml(d.handle)}</div>
+                  <div class="text-sm font-normal mt-3 pt-3 border-t leading-relaxed" style="border-color:${c.border}" ${edAttr('bio')}>${escapeHtml(d.bio)}</div>
                 </div>
               </div>
             </div>`;
